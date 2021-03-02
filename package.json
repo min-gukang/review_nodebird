@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
@@ -30,5 +31,8 @@
     "passport-local": "^1.0.0",
     "sequelize": "^6.5.0",
     "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0"
   }
 }
