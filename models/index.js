@@ -5,12 +5,15 @@ const User = require('./user');
 const Post = require('./post');
 const Hashtag = require('./hashtag');
 
-const db = {}; // 새로운 db객체를 만들어서 
-const sequelize = new Sequelize( //sequelize 인스턴스를 생성하고 
-    config.database, config.username, config.password, config,
+const db = {}; // 새로운 db객체를 만들어서
+const sequelize = new Sequelize( //sequelize 인스턴스를 생성하고
+  config.database,
+  config.username,
+  config.password,
+  config,
 );
 
-db.sequelize = sequelize; // db객체에 속성과 함께 집어넣는다. 
+db.sequelize = sequelize; // db객체에 속성과 함께 집어넣는다.
 db.User = User;
 db.Post = Post;
 db.Hashtag = Hashtag;
