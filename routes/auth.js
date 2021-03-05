@@ -34,7 +34,6 @@ router.post('/login', isNotLoggedIn,  (req, res, next) => {
       console.error(authError);
       return next(authError);
     }
-    console.log('user: ', user);
     if (!user) {
       return res.redirect(`/?loginError=${info.message}`);
     }
@@ -44,14 +43,13 @@ router.post('/login', isNotLoggedIn,  (req, res, next) => {
         console.error(loginError);
         return next(loginError);
       }
-      console.log('user:', user.dataValues);
       //여기서 session-cookie를 브라우저로 보내준다.
       return res.redirect('/');
     });
   })(req, res, next);
 });
 
-router.get('/logout', isLoggedIn, (req, res, next) => {
+router.get('/logout', isLoggedIn, (req, res) => {
   req.logout();
   req.session.destroy();
   res.redirect('/');

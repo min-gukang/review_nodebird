@@ -10,7 +10,6 @@ module.exports = () => {
   //로그인 이후 사용자권한으로 api요청보낼때 실행되는 부분
   //브라우저가 session-cookie로 {id: 3, session-id: 'asdfsdfadsf'} 보냄
   passport.deserializeUser((id, done) => {
-    console.log('id :', id);
     User.findOne({
       where: { id },
         include: [

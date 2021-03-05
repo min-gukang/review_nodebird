@@ -80,6 +80,4 @@ app.use((err, req, res, next) => {
   res.render('error');
 });
 
-app.listen(app.get('port'), () => {
-  console.log(`listening at ${app.get('port')}`);
-});
+module.exports = app;
